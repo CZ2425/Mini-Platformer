@@ -393,7 +393,7 @@
           const hillWidth = 280;
           const hillHeight = 80 + (i % 2) * 40;
           const x = i * 250 - 40;
-          const y = 430 - i * 12;
+          const y = 430 - i * 12 + (i === 2 ? 24 : 0);
           ctx.beginPath();
           ctx.ellipse(x + hillWidth / 2, y + hillHeight, hillWidth / 2, hillHeight, 0, Math.PI, Math.PI * 2);
           ctx.fill();

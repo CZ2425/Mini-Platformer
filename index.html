@@ -188,10 +188,10 @@
             { x: 760, y: 285, w: 80, h: 16, minX: 760, maxX: 760, minY: 130, maxY: 320, vx: 0, vy: 1.4 },
           ],
           spikes: [
-            { x: 205, y: 480, w: 45, h: 20 },
-            { x: 455, y: 480, w: 45, h: 20 },
-            { x: 715, y: 480, w: 45, h: 20 },
-            { x: 815, y: 480, w: 45, h: 20 },
+            { x: 205, y: 500, w: 45, h: 20 },
+            { x: 455, y: 500, w: 45, h: 20 },
+            { x: 715, y: 500, w: 45, h: 20 },
+            { x: 815, y: 500, w: 45, h: 20 },
           ],
           lava: [{ x: 0, y: 520, w: 960, h: 20 }],
           enemies: [
@@ -379,29 +379,10 @@
       }
 
       function drawBackground() {
-        const theme = LEVEL_THEMES[currentLevelIndex % LEVEL_THEMES.length];
-
-        const skyGradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-        skyGradient.addColorStop(0, theme.skyTop);
-        skyGradient.addColorStop(1, theme.skyBottom);
-        ctx.fillStyle = skyGradient;
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        ctx.fillStyle = theme.hill;
-        for (let i = 0; i < 4; i++) {
-          const hillWidth = 280;
-          const hillHeight = 80 + (i % 2) * 40;
-          const x = i * 250 - 40;
-          const y = 430 - i * 12;
-          ctx.beginPath();
-          ctx.ellipse(x + hillWidth / 2, y, hillWidth / 2, hillHeight, 0, Math.PI, 0, true);
-          ctx.fill();
-        }
-
-        for (let i = 0; i < 5; i++) {
-          const x = 110 + i * 185 + ((currentLevelIndex * 37) % 45);
-          const y = 90 + ((i + currentLevelIndex) % 3) * 28;
-          ctx.fillStyle = theme.cloud;
+        for (let i = 0; i < 6; i++) {
+          const x = 90 + i * 160;
+          const y = 120 + (i % 2) * 30;
+          ctx.fillStyle = 'rgba(255,255,255,0.18)';
           ctx.beginPath();
           ctx.arc(x, y, 30, 0, Math.PI * 2);
           ctx.arc(x + 35, y + 5, 26, 0, Math.PI * 2);

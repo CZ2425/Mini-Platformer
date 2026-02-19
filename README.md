@@ -1,6 +1,11 @@
-# Tiny-Platformer
+# make
 
-A tiny browser platformer game built with HTML5 canvas. It now includes multiple levels with progression.
+A browser platformer game built with HTML5 canvas featuring:
+- 5 levels with progression
+- moving platforms
+- spike hazards
+- lava hazards
+- patrolling enemy slimes
 
 ## Run locally
 
